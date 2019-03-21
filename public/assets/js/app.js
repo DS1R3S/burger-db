@@ -1,6 +1,6 @@
 $(function () {
     $(".eat-btn").on("click", function (event) {
-        eatBurger();
+        event.preventDefault();
         var id = $(this).data("id");
         var newDevour = $(this).data("newDevour");
 
@@ -21,7 +21,6 @@ $(function () {
 
     $("#submit-btn").on("click", function (event) {
         event.preventDefault();
-        cookBurger();
 
         var newBurger = {
             name: $('#ca').val().trim(),
