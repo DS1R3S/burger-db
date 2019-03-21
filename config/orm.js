@@ -31,21 +31,18 @@ function objToSql(ob) {
     }
 
     // translate array of strings to a single comma-separated string
-    return arr.toString();
 }
 
 
 // Object Relational Mapper
-// 	Here we pass in query parameters for all 3 methods, including callbacks, to receive the data from the model
+// Here we pass in query parameters for all 3 methods, including callbacks, to receive the data from the model
 var orm = {
     all: function (input, cb) {
         let queryString = "SELECT * FROM " + input + ";";
         connection.query(queryString, function (err, data) {
             if (err) {
                 throw err;
-
             }
-
             cb(data);
         });
     },
