@@ -11,12 +11,14 @@ router.get('/', function(req, res) {
     var hbsObject = {
       burgers: data
     };
+    console.log(data);
     // console.log(hbsObject);
     res.render('index', hbsObject);
   });
 });
 
 router.post('/burgers', function(req, res) {
+  console.log(req.body.burger_name);
   burger.insert([
     'burger_name'
   ], [
@@ -32,7 +34,9 @@ router.put('/burgers/:id', function(req, res) {
   burger.update({
     devoured: true
   }, condition, function(data) {
-    res.redirect('/');
+    console.log(data);
+    // res.redirect('/');
+    res.json(data);
   });
 });
 

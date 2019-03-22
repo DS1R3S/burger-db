@@ -17,7 +17,7 @@
 			{{#unless this.devoured}}
 			<div class="burger">
 				<form class="devour-burger-form" action="/{{id}}?_method=PUT" method="PUT">
-					<button class="eat-btn">EAT</button>
+					<button class="eat-btn" type="submit" data-id="{{id}}">EAT</button>
 				</form>
 				{{burger_name}} <span>#{{id}}</span>
 			</div>
@@ -29,7 +29,7 @@
 			<ul>
 				{{#each burgers}}
 				{{#if devoured}}
-				{{> burgers/burger-block devoured=false}}
+				{{!-- {{> burgers/burger-block devoured=false}} --}}
 				{{/if}}
 				{{/each}}
 			</ul>
